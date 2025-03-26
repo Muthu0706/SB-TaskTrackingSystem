@@ -1,0 +1,17 @@
+package com.tasktrackingsystem.dto;
+
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class TaskReportResponseDto {
+
+	private Long taskId;
+	private String taskDescription;
+    private String timeTaken;
+
+}

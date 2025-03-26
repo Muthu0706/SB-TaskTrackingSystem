@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+    <property name="LOGS" value="./logs" />
+    
+    <!-- Define Console Appender -->
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss}] [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <!-- Define Rolling File Appender -->
+    <appender name="RollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}/TaskTrackingSystem.log</file>        
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss}] [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS}/TaskTrackingSystem-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>100KB</maxFileSize>
+            <maxHistory>10</maxHistory>
+            <totalSizeCap>1MB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <!-- Define the root logger -->
+    <root level="info">
+        <appender-ref ref="Console" />
+        <appender-ref ref="RollingFile" />
+    </root>
+
+    <!-- Define specific logger for the application -->
+    <logger name="com.tasktrackingsystem" level="trace" additivity="false">
+        <appender-ref ref="Console" />
+        <appender-ref ref="RollingFile" />
+    </logger>
+
+    <!-- Suppressing unwanted logs -->
+    <logger name="org.springframework.boot.autoconfigure" level="off" />
+    <logger name="org.springframework.boot.context.event" level="off" />
+    <logger name="org.springframework" level="warn" />
+    <logger name="org.hibernate" level="warn" />
+    
+</configuration>
