@@ -2,10 +2,8 @@ package com.tasktrackingsystem.constants;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import lombok.Data;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-@Data
 public class TaskConstants {
     
     // USER ENDPOINTS
@@ -19,11 +17,8 @@ public class TaskConstants {
     public static final String LOGOUT = "/logout";
     public static final String TASK_TRACKING_SYSTEM_PRODUCTION_API = "https://sb-tasktrackingsystem-production.up.railway.app";
     
-    public static final String TASK_TRACKING_SYSTEM_UI_API;
-    @Value("${app.api.url}")
-    public void setTaskTrackingSystemUIAPI(String uiApiUrl) {
-        TASK_TRACKING_SYSTEM_UI_API = uiApiUrl;
-    }
+    public static final String TASK_TRACKING_SYSTEM_UI_API= "https://sb-tasktrackingsystem-production.up.railway.app";
+    
 
     // TASK ENDPOINTS
     public static final String ADD_TASK_DETAILS = "/add/task";
