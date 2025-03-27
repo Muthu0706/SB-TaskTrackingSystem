@@ -2,8 +2,10 @@ package com.tasktrackingsystem.constants;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import lombok.Data;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
+@Data
 public class TaskConstants {
     
     // USER ENDPOINTS
