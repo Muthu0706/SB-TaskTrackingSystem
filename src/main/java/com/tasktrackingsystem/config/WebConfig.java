@@ -11,12 +11,13 @@ import com.tasktrackingsystem.constants.TaskConstants;
 @EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
 	
-      @Override
-      public void addCorsMappings(CorsRegistry registry) {
-         registry.addMapping(TaskConstants.CROSSMAPPING)
-            .allowedOrigins(TaskConstants.TASK_TRACKING_SYSTEM_UI_API)
-            .allowedMethods(TaskConstants.API_MAPPING)
-            .allowCredentials(true);
-      }
+@Override
+public void addCorsMappings(CorsRegistry registry) {
+    registry.addMapping(TaskConstants.CROSSMAPPING) // /**
+        .allowedOrigins(TaskConstants.TASK_TRACKING_SYSTEM_UI_API, 
+                        TaskConstants.TASK_TRACKING_SYSTEM_PRODUCTION_API) // Allow both dev and prod
+        .allowedMethods(TaskConstants.API_MAPPING) // Allowed methods
+        .allowCredentials(true);
+}
 }
 
