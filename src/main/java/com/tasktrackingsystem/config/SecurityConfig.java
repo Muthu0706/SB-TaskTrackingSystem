@@ -15,6 +15,7 @@ import com.tasktrackingsystem.filter.CORSFilter;
 import com.tasktrackingsystem.filter.UserAuthenticationHandlerFilter;
 import com.tasktrackingsystem.filter.UserNameHandlerFilter;
 import lombok.RequiredArgsConstructor;
+import com.tasktrackingsystem.constants.TaskConstants;
 
 @Configuration
 @RequiredArgsConstructor
@@ -30,6 +31,8 @@ public class SecurityConfig {
 			"/v3/api-docs/",
 			"http://localhost:8080/v3/api-docs",
             "/swagger-ui/",
+	  TaskConstants.TASK_TRACKING_SYSTEM_UI_API + "/signup", 
+          TaskConstants.TASK_TRACKING_SYSTEM_UI_API + "/login",
             "/swagger-ui.html",
             "/api/auth/signup",
             "/api/auth/login",
