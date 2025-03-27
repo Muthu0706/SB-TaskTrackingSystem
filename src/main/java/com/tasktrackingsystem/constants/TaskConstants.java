@@ -15,6 +15,8 @@ public class TaskConstants {
     public static final String GET_PROFILE_PICTURE = "/getProfilePicture";
     public static final String UPDATE_USER_DETAILS = "/update/user";
     public static final String LOGOUT = "/logout";
+    public static final String TASK_TRACKING_SYSTEM_PRODUCTION_API = "https://sb-tasktrackingsystem-production.up.railway.app";
+
 
     // TASK ENDPOINTS
     public static final String ADD_TASK_DETAILS = "/add/task";
