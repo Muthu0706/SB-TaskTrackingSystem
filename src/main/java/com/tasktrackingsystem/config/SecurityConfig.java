@@ -31,6 +31,7 @@ public class SecurityConfig {
 			"/v3/api-docs/",
 			"http://localhost:8080/v3/api-docs",
             "/swagger-ui/",
+	     "/api/auth/**" ,
 	    "https://sb-tasktrackingsystem-production.up.railway.app/api/auth/signup", 
             "https://sb-tasktrackingsystem-production.up.railway.app/api/auth/login",
             "/swagger-ui.html",
