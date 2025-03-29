@@ -31,5 +31,5 @@ public class WebConfig implements WebMvcConfigurer {
 //                 .allowedHeaders("*") // Allow all headers
 //                 .allowCredentials(false); // Change to true if you need credentials
 //     }
-}
+// }
 
